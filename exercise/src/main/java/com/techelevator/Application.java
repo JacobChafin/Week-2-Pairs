@@ -106,11 +106,9 @@ Map<String, Project> projects = new HashMap<String, Project>();
      */
     private void createTeamsProject() {
         Project TEams = new Project("TEams", "Project Management Software", "10/10/2020", "11/10/2020");
-        TEams.setTeamMembers(employees);
         for (Employee employee : employees) {
             if (employee.getDepartment().getName().equals("Engineering")) {
-                TEams.setTeamMembers(employees);
-                // how do we add the employee to the list
+                TEams.setTeamMembers(employee);
             }
         }
 
@@ -125,12 +123,9 @@ Map<String, Project> projects = new HashMap<String, Project>();
      */
     private void createLandingPageProject() {
         Project Marketing_Landing_Page_Project = new Project("Marketing Landing Page", "Lead Capture Landing Page for Marketing", "10/10/2020", "10/17/2020");
-        Marketing_Landing_Page_Project.setTeamMembers(employees);
-//adds all employees
         for (Employee employee : employees) {
-            if (!employee.getDepartment().getName().equals("Marketing")) {
-//                Marketing_Landing_Page_Project.remove(employee.getFullName(employee.getFirstName(), employee.getLastName()));
-                // how do we add/remove the employee from the list
+            if (employee.getDepartment().getName().equals("Marketing")) {
+                Marketing_Landing_Page_Project.setTeamMembers(employee);
             }
         }
 
@@ -144,7 +139,7 @@ Map<String, Project> projects = new HashMap<String, Project>();
     private void printProjectsReport() {
         System.out.println("\n------------- PROJECTS ------------------------------");
         for (Map.Entry<String, Project> project : projects.entrySet()) {
-//            System.out.println(project.getKey() +": " + (project.getteamsMembers();
+            System.out.println(project.getKey() +": " + (project.getValue().teamMembers.size()));
             // need list (teamMembers?) length of list with employees (by using project somewhere) to see how many
         }
     }

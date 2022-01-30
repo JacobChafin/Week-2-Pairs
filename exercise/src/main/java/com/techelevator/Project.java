@@ -29,8 +29,8 @@ public Project(String name, String description, String startDate, String dueDate
     public void setDueDate(String dueDate) {
         this.dueDate = dueDate;
     }
-    public void setTeamMembers(List<Employee> teamMembers) {
-        this.teamMembers = teamMembers;
+    public void setTeamMembers(Employee teamEmployee) {
+        teamMembers.add(teamEmployee);
     }
 
 
